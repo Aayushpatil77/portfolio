@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="w-full bg-zinc-700 mt-28 p-4">
-        <div className="container mx-auto flex justify-between">
+        <div className="container mx-auto flex justify-between flex-wrap gap-2">
             <p>
                 Copyrights &copy; 2022 Ayush Patil - All Rights Reserved
             </p>

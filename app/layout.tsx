@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${satoshi.className} bg-zinc-900 text-zinc-50`}
         suppressHydrationWarning={true}
