@@ -1,6 +1,7 @@
 import Image from "next/image";
 import arrow_long from "@/public/assets/icons/arrow_long.svg";
 import { ProjectCard, Tabs, WorkflowCard } from "@/components";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
                   width="0"
                   height="0"
                   sizes="100vw"
-                  className="translate-y-1 w-7 h-auto transition group-hover:translate-x-1"
+                  className="translate-y-1 w-7 h-auto transition duration-150 ease-in-out group-hover:translate-x-1"
                   alt="long-arrow"
                 />
               </div>
@@ -123,6 +124,18 @@ export default function Home() {
           </h2>
 
           <Tabs />
+        </section>
+        {/* Lead Form */}
+        <section className="mt-28">
+          <div className="flex  justify-center items-center">
+            <Link
+              target="_blank"
+              href="https://bit.ly/3qWbvP4"
+              className="focus:border-none transition-all duration-200 ease-in-out focus:outline-none border-dashed border border-white text-2xl px-6 py-1 rounded-md hover:bg-sky-500 hover:border-sky-500 font-medium"
+            >
+              {"Let's Talk"}
+            </Link>
+          </div>
         </section>
       </main>
     </>

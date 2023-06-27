@@ -15,5 +15,5 @@ export {
   Footer,
   ResizablePanel,
   Tabs,
-  MenuButton
+  MenuButton,
 };

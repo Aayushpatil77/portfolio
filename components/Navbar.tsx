@@ -26,7 +26,7 @@ const Navbar = () => {
 
       <nav className="max-sm:hidden flex justify-between items-center my-5">
         <div className="flex items-end">
-          <h1 className="text-3xl font-bold">Ayush</h1>
+          <h1 className="text-3xl font-bold"><Link href="/">Ayush</Link></h1>
           <span className="mb-3 ml-1 w-2 h-2 bg-white"></span>
         </div>
         <ul className="flex gap-4 font-bold">
@@ -37,7 +37,7 @@ const Navbar = () => {
           </li>
           <li>
             <p className="text-base cursor-pointer">
-              <Link href="/#services">Services</Link>
+              <a href="/#services">Services</a>
             </p>
           </li>
           <li>
@@ -47,9 +47,13 @@ const Navbar = () => {
             <p className="text-base cursor-pointer">About</p>
           </li>
         </ul>
-        <button className="text-base outline outline-1 px-2 py-1">
+        <Link
+          target="_blank"
+          href="https://bit.ly/3qWbvP4"
+          className="focus:border-white focus:border-dashed transition-all duration-200 ease-in-out focus:outline-none border-dashed border border-white text-base px-4 py-1 rounded-md hover:bg-sky-500 hover:border-sky-500 font-medium"
+        >
           {"Let's Talk"}
-        </button>
+        </Link>
       </nav>
 
       {/* Mobile Navbar */}
@@ -118,7 +122,7 @@ const Navbar = () => {
                         toggleMobileNav();
                       }}
                     >
-                      <Link href="/#services">Services</Link>
+                      <a href="/#services">Services</a>
                     </p>
                   </li>
                   <li>

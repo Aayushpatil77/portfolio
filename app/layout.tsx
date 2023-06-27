@@ -22,7 +22,7 @@ export default function RootLayout({
         className={`${satoshi.className} bg-zinc-900 text-zinc-50`}
         suppressHydrationWarning={true}
       >
-        <div className="container mx-auto">
+        <div className="w-11/12 mx-auto">
           <Navbar />
           {children}
         </div>

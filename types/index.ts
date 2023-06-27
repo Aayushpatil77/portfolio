@@ -1,33 +1,34 @@
 import { Cycle } from "framer-motion";
 import { ReactNode } from "react";
 
-export interface ProjectCardProps {
+export type ProjectCardProps = {
   title: string;
   description: string;
   link: string;
   imgSrc: string;
   className: string;
-}
+};
 
-export interface WorkflowCardProps {
+export type WorkflowCardProps = {
   heading: string;
   subHeading: string;
-}
+};
 
-export interface ServiceCardProps {
+export type ServiceCardProps = {
   price: string;
   previousPrice?: string;
   className?: string;
   features: Array<string>;
-}
-export interface ResizablePanelProps {
+};
+
+export type ResizablePanelProps = {
   children: ReactNode;
   animationName: "fade" | "crossFade" | "slide" | "slideAndFade";
   duration: number;
   containerStyles?: string;
-}
+};
 
-export interface MenuButtonProps {
+export type MenuButtonProps = {
   mobileNav: boolean;
   toggleMobileNav: Cycle;
-}
+};
