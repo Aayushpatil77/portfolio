@@ -1,8 +1,9 @@
 import { ServiceCardProps } from "@/types";
+import Image from "next/image";
+import pointers from '@/public/assets/icons/pointers.svg';
 
 const ServiceCard = ({
   price,
-  previousPrice,
   features,
   className,
 }: ServiceCardProps) => {
@@ -12,16 +13,16 @@ const ServiceCard = ({
         className={`${className} py-5 mx-auto px-10 rounded-xl flex items-center bg-zinc-700 justify-center`}
       >
         <div>
-          <div className="flex items-center gap-3">
-            <h4 className="text-2xl line-through font-bold">{previousPrice}</h4>
-            <h4 className="text-4xl font-bold">{price}</h4>
-          </div>
+            <h4 className="text-3xl font-bold my-2 mb-4 text-center">{price}</h4>
           <div>
-            <ol className="list-decimal">
+            <ul className="flex flex-col gap-2">
               {features.map((feature, indx) => (
-                <li key={indx}>{feature}</li>
+                <li key={indx} className="flex gap-3">
+                  <Image src={pointers} alt="pointers" />
+                  {feature}
+                </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </div>
       </div>

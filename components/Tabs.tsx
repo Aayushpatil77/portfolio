@@ -6,8 +6,8 @@ import ServiceCard from "./ServiceCard";
 import ResizablePanel from "./ResizablePanel";
 
 const tabs = [
-  { id: "website", label: "website" },
-  { id: "app", label: "app" },
+  { id: "website creation", label: "website creation" },
+  { id: "website redesign", label: "website redesign" },
 ];
 
 const Tabs = () => {
@@ -19,7 +19,7 @@ const Tabs = () => {
           <button
             key={tab.id}
             onClick={() => setActive(tab.id)}
-            className={`transition relative cursor-pointer text-white rounded-full w-36 shadow-sm text-center py-2 font-bold capitalize`}
+            className={`transition relative cursor-pointer text-white rounded-full w-40 shadow-sm text-center py-2.5 px-1 font-bold capitalize`}
           >
             <div className="bg-zinc-700 z-10 inset-0 absolute rounded-full" />
             {active === tab.id && (
@@ -40,40 +40,30 @@ const Tabs = () => {
         duration={0.5}
         containerStyles="flex justify-center items-center"
       >
-        {active === "website" ? (
+        {active === "website creation" ? (
           <ServiceCard
-            price="$1250"
-            previousPrice="$2500"
+            price="30k-40k"
             features={[
-              "Website Creation / Redesign",
-              "Professional Branding",
-              "Payment Gateway Integration",
-              "Optimized for both Laptop and Mobile devices",
-              "Image optimization For Fast Loading",
-              "Domain connection",
-              "Basic SEO",
-              "Web Analytics And Pixel Integration",
-              "Eye-catching design",
-              "Website Legal pages",
-              "Contact Form",
+              "E-Commerce Functionality",
+              "Dashboard",
+              "Responsive Design",
+              "Domain Integration",
+              "Integration of Social Media",
+              "User-Friendly Interface",
+              "Content Management System (CMS)",
             ]}
           />
         ) : (
           <ServiceCard
-            price="$2250"
-            previousPrice="$3500"
+            price="25k-30k"
             features={[
-              "App Development / Redesign",
-              "Professional Branding",
-              "Payment Gateway Integration",
-              "Optimized for both smartphones and tablets",
-              "Image optimization for fast loading",
-              "App Store / Play Store submission",
-              "Basic SEO for app stores",
-              "App Analytics Integration",
-              "Eye-catching design",
-              "App Legal pages",
-              "Contact Form integration",
+              "E-Commerce Functionality",
+              "Improved User Experience",
+              "Content Organization & Structure",
+              "Performance Optimization",
+              "Brand Consistency",
+              "Integrating New Features",
+              "Improved Accessibility",
             ]}
           />
         )}

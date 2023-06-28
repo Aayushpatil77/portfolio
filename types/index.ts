@@ -16,7 +16,6 @@ export type WorkflowCardProps = {
 
 export type ServiceCardProps = {
   price: string;
-  previousPrice?: string;
   className?: string;
   features: Array<string>;
 };

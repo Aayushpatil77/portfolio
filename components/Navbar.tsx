@@ -26,34 +26,37 @@ const Navbar = () => {
 
       <nav className="max-sm:hidden flex justify-between items-center my-5">
         <div className="flex items-end">
-          <h1 className="text-3xl font-bold"><Link href="/">Ayush</Link></h1>
+          <h1 className="text-3xl font-bold">
+            <Link href="/">Ayush</Link>
+          </h1>
           <span className="mb-3 ml-1 w-2 h-2 bg-white"></span>
         </div>
         <ul className="flex gap-4 font-bold">
           <li>
-            <p className="text-base cursor-pointer">
-              <Link href="/templates">Templates</Link>
-            </p>
+            <a href="#about">
+              <p>About</p>
+            </a>
           </li>
           <li>
-            <p className="text-base cursor-pointer">
+            <p>
               <a href="/#services">Services</a>
             </p>
           </li>
           <li>
-            <p className="text-base cursor-pointer">Blog</p>
+            <Link href="https://savvyinsights.hashnode.dev/" target="_blank">
+              Blog
+            </Link>
           </li>
           <li>
-            <p className="text-base cursor-pointer">About</p>
+            <Link
+              target="_blank"
+              href="https://bit.ly/3qWbvP4"
+              className="focus:border-white focus:border-dashed transition-all duration-200 ease-in-out focus:outline-none border-dashed border border-white text-base px-4 py-1 rounded-md hover:bg-sky-500 hover:border-sky-500 font-medium"
+            >
+              {"Let's Talk"}
+            </Link>
           </li>
         </ul>
-        <Link
-          target="_blank"
-          href="https://bit.ly/3qWbvP4"
-          className="focus:border-white focus:border-dashed transition-all duration-200 ease-in-out focus:outline-none border-dashed border border-white text-base px-4 py-1 rounded-md hover:bg-sky-500 hover:border-sky-500 font-medium"
-        >
-          {"Let's Talk"}
-        </Link>
       </nav>
 
       {/* Mobile Navbar */}
@@ -113,23 +116,36 @@ const Navbar = () => {
                   className="flex gap-4 font-bold flex-col"
                 >
                   <li>
-                    <p className="text-2xl cursor-pointer ">Templates</p>
-                  </li>
-                  <li>
-                    <p
-                      className="text-2xl cursor-pointer"
+                    <a
+                      className="text-2xl"
+                      href="#about"
                       onClick={(e) => {
                         toggleMobileNav();
                       }}
                     >
-                      <a href="/#services">Services</a>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="text-2xl"
+                      href="/#services"
+                      onClick={(e) => {
+                        toggleMobileNav();
+                      }}
+                    >
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <p className="text-2xl cursor-pointer">
+                      <Link
+                        href="https://savvyinsights.hashnode.dev/"
+                        target="_blank"
+                      >
+                        Blog
+                      </Link>
                     </p>
-                  </li>
-                  <li>
-                    <p className="text-2xl cursor-pointer ">Blog</p>
-                  </li>
-                  <li>
-                    <p className="text-2xl cursor-pointer ">About</p>
                   </li>
                 </motion.ul>
                 <motion.div

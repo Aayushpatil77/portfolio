@@ -1,36 +1,40 @@
 import Image from "next/image";
-import arrow_long from "@/public/assets/icons/arrow_long.svg";
-import { ProjectCard, Tabs, WorkflowCard } from "@/components";
 import Link from "next/link";
+
+import { ProjectCard, Tabs, WorkflowCard } from "@/components";
+import { workflowCardData } from "@/constants";
+
+import ayush from "@/public/assets/images/ayush.png";
+import arrow_long from "@/public/assets/icons/arrow_long.svg";
+import twitter from "@/public/assets/icons/twitter.svg";
+import gmail from "@/public/assets/icons/gmail.svg";
+import linkedin from "@/public/assets/icons/linkedin.svg";
+import github from "@/public/assets/icons/github.svg";
 
 export default function Home() {
   return (
     <>
       <main className="mt-28">
         {/* Hero Section */}
-        <section className="flex sm:w-full justify-between max-lg:justify-center items-center">
-          <div>
-            <h1 className="text-5xl max-lg:text-4xl max-sm:text-3xl max-lg:text-center max-sm:text-center font-bold leading-tight animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
-              Crafting designs that are <br className="max-sm:hidden" /> both
-              functional and <br className="max-sm:hidden" /> beautiful
-            </h1>
-            <a href="#services" className="group">
-              <div className="flex font-normal gap-2 mt-7 items-center max-lg:justify-center transition-all ease-in-out">
-                <h6 className="max-lg:text-center max-sm:text-lg text-xl">
-                  Start Crafting{" "}
-                </h6>
-                <Image
-                  src={arrow_long}
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  className="translate-y-1 w-7 h-auto transition duration-150 ease-in-out group-hover:translate-x-1"
-                  alt="long-arrow"
-                />
-              </div>
-            </a>
-          </div>
-          <div className="w-[500px] h-[400px] rounded-lg bg-zinc-700 block max-lg:hidden"></div>
+        <section className="flex flex-col items-center">
+          <h1 className="text-center text-5xl max-lg:text-4xl max-sm:text-3xl max-lg:text-center max-sm:text-center font-bold leading-tight animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
+            Crafting designs that are <br className="max-sm:hidden" /> both functional and beautiful
+          </h1>
+          <a href="#services" className="group">
+            <div className="flex font-normal gap-2 mt-7 items-center max-lg:justify-center transition-all ease-in-out">
+              <h6 className="max-lg:text-center max-sm:text-lg text-xl">
+                Start Crafting{" "}
+              </h6>
+              <Image
+                src={arrow_long}
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="translate-y-1 w-7 h-auto transition duration-150 ease-in-out group-hover:translate-x-1"
+                alt="long-arrow"
+              />
+            </div>
+          </a>
         </section>
 
         {/* Project Section */}
@@ -93,26 +97,13 @@ export default function Home() {
 
           <div className="mt-20 border border-dashed min-w-full">
             <div className="flex flex-col items-center gap-10 p-10">
-              <WorkflowCard
-                heading="1. Requirements"
-                subHeading="We'll make sure I have everything needed to complete your project."
-              />
-              <WorkflowCard
-                heading="2. Development"
-                subHeading="I'll develop the project and deliver a working product for your review.​"
-              />
-              <WorkflowCard
-                heading="3. Modifications"
-                subHeading="I'll modify assets or content based on your feedback."
-              />
-              <WorkflowCard
-                heading="4. Delivery"
-                subHeading="I'll send you the final delivery for review and feedback."
-              />
-              <WorkflowCard
-                heading="5. Follow ups"
-                subHeading="I'll send you the final delivery for review and feedback."
-              />
+              {workflowCardData.map((data) => (
+                <WorkflowCard
+                  key={data.heading}
+                  heading={data.heading}
+                  subHeading={data.subHeading}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -133,8 +124,58 @@ export default function Home() {
               href="https://bit.ly/3qWbvP4"
               className="focus:border-none transition-all duration-200 ease-in-out focus:outline-none border-dashed border border-white text-2xl px-6 py-1 rounded-md hover:bg-sky-500 hover:border-sky-500 font-medium"
             >
-              {"Let's Talk"}
+              {"Let's Talk 👋 "}
             </Link>
+          </div>
+        </section>
+        {/* About Section */}
+        <section className="mt-28 scroll-mt-4" id="about">
+          <div className="flex flex-col gap-3 w-80 mx-auto items-center">
+            <Image
+              src={ayush}
+              className="w-38 h-38 rounded-full bg-zinc-400"
+              alt="ayush"
+            />
+            <div className="flex flex-col gap-1 items-center">
+              <h4 className="text-3xl font-medium">Ayush Patil</h4>
+              <p className="text-base text-justify">
+                I am a 19-year-old website developer and machine learning
+                enthusiast, currently studying B.Tech. With a passion for
+                crafting captivating digital experiences, I am dedicated to
+                pushing the boundaries of innovation. Welcome to my portfolio
+                site, where limitless possibilities await.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <Link
+                href="https://github.com/AayushPatil77"
+                target="_blank"
+                className="rounded-full border border-dashed p-2 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center"
+              >
+                <Image src={github} alt="github" width={24} height={24} />
+              </Link>
+              <Link
+                href="mailto:ayushpatil77@proton.me"
+                target="_blank"
+                className="rounded-full border border-dashed p-2 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center"
+              >
+                <Image src={gmail} alt="gmail" width={24} height={24} />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/ayush-patil-b052211b0/"
+                target="_blank"
+                className="rounded-full border border-dashed p-2 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center"
+              >
+                <Image src={linkedin} alt="linkedin" width={24} height={24} />
+              </Link>
+              <Link
+                href="https://twitter.com/Ayush_Patil01"
+                target="_blank"
+                className="rounded-full border border-dashed p-2 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center"
+              >
+                <Image src={twitter} alt="twitter" width={22} height={22} />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
